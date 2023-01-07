@@ -1,0 +1,23 @@
+.App {
+  border: solid;
+  border-width: thin;
+  border-radius: 4px;
+  margin: 30px auto;
+  max-width: 700px;
+}
+.TempValue {
+  font-size: 48px;
+}
+.DayForecast li .row {
+  font-size: 14px;
+}
+.DayForecast li .row .col img {
+  width: 70px;
+}
+li {
+  list-style: none;
+}
+
+.DetailedInfo ul {
+  margin-top: 25px;
+}
