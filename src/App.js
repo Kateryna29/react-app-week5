@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import DateFormater from "./DateFormater"
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 
@@ -8,7 +9,7 @@ function App() {
   function WeatherResponse(respons) {
     setWeatherInfo({
       ready: true,
-      dataCurrent: "Sunday 01:47",
+      dataCurrent: new Date(respons.data.time * 1000),
       temperature: respons.data.temperature.current,
       feelslike: respons.data.temperature.feels_like,
       wind: respons.data.wind.speed,
@@ -54,7 +55,7 @@ function App() {
           <div className="d-flex">
             <div className="p-2 flex-grow-1">
               <h1 className="CityName">{weatherInfo.city}</h1>
-              <div className="DateInfo">{weatherInfo.dataCurrent}</div>
+              <div className="DateInfo"><DateFormater date={weatherInfo.dataCurrent} /></div>
               <div className="DescriptionInfo">{weatherInfo.description}</div>
               <div className="row">
                 <div className="col-5" id="MainIcon">
