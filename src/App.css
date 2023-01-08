@@ -1,12 +1,21 @@
 .App {
+  max-width: 700px;
+  margin: 30px auto;
+}
+.App .container {
   border: solid;
   border-width: thin;
+  border-color: rgb(128, 128, 128, 0.5);
   border-radius: 4px;
-  margin: 30px auto;
-  max-width: 700px;
+  padding: 10px;
 }
 .TempValue {
-  font-size: 48px;
+  font-size: 78px;
+  position: relative;
+  top: 35px;
+}
+.metric {
+  font-size: 28px;
 }
 .DayForecast li .row {
   font-size: 14px;
@@ -20,4 +29,19 @@ li {
 
 .DetailedInfo ul {
   margin-top: 25px;
+}
+.DescriptionInfo {
+  text-transform: capitalize;
+}
+
+#MainIcon img {
+  width: 200px;
+}
+
+.DescriptionInfo,
+.DateInfo {
+  margin-bottom: 3px;
+}
+.CityName {
+  font-size: 58px;
 }
