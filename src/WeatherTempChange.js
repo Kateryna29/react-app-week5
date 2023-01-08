@@ -18,7 +18,7 @@ export default function WeatherTempChange(props) {
   if (unit === "celsius") {
     return (
       <div className="WeatherTempChange">
-        <span className="TempValue">{Math.round(fahrenheit())}</span>
+        <span className="TempValue">{props.celsius}</span>
         <span className="unit">
           {" "}
           °C |{" "}
@@ -31,7 +31,8 @@ export default function WeatherTempChange(props) {
   } else {
     return (
       <div className="WeatherTempChange">
-        <span className="TempValue">{props.celsius}</span>
+        <span className="TempValue">{Math.round(fahrenheit())}</span>
+
         <span className="unit">
           {" "}
           <a href="/" onClick={convertToCelsius}>

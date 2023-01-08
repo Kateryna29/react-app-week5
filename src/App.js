@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import ForecastDay from "./ForecastDay";
 import Searching from "./Searching";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
@@ -19,6 +19,7 @@ function App(props) {
       description: respons.data.condition.description,
       iconUrl: respons.data.condition.icon_url,
       city: respons.data.city,
+      country: respons.data.country,
     });
   }
 
@@ -68,8 +69,15 @@ function App(props) {
                 Current location
               </button>
             </div>
+          </div>{" "}
+          <div className="d-flex">
+            <div className="p-2 flex-grow-1">
+              <Searching date={weatherInfo} />
+            </div>
+            <div className="p-3">
+              <ForecastDay date={weatherInfo} />
+            </div>
           </div>
-          <Searching date={weatherInfo} />
         </div>
         <footer>
           This project was coded by Kateryna Nykonenko and is{" "}
