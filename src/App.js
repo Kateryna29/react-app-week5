@@ -82,7 +82,7 @@ function App(props) {
           </a>{" "}
           and{" "}
           <a
-            href="https://app.netlify.com/sites/boisterous-beijinho-95bd37/deploys/"
+            href="https://boisterous-beijinho-95bd37.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
