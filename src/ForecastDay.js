@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import DateFormatForecast from "./DateFormatForecast";
 
 export default function ForecastDay(props) {
   const [loaded, setLoaded] = useState(false);
@@ -12,30 +13,9 @@ export default function ForecastDay(props) {
 
   if (loaded) {
     return (
-      <ul className="DayForecast">
-        <li>
-          <div className="NameDayForecast">Sat</div>
-          <div className="row">
-            <div className="col">
-              <img
-                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
-                alt="description"
-              />
-            </div>
-            <div className="col">
-              <div className="row">
-                <div className="col bold">
-                  {Math.round(forecast[0].temperature.maximum)}°
-                </div>
-                <div className="col">
-                  {" "}
-                  {Math.round(forecast[0].temperature.minimum)}°°
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
+      <div className="ForecastInfo">
+        <DateFormatForecast dateForecast={forecast[0]} />
+      </div>
     );
   } else {
     const APIkey = "o25a94199tbb4037b02fa17a9ad37fed";
