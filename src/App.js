@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
-import DateFormater from "./DateFormater"
+
+import Searching from "./Searching";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 
-function App() {
+function App(props) {
   const [weatherInfo, setWeatherInfo] = useState({ ready: false });
+  const [city, setCity] = useState(props.CityValue);
   function WeatherResponse(respons) {
     setWeatherInfo({
       ready: true,
@@ -20,13 +22,27 @@ function App() {
     });
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function UpdateCity(event) {
+    setCity(event.target.value);
+  }
+
+  function search() {
+    const APIkey = "o25a94199tbb4037b02fa17a9ad37fed";
+    let ApiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${APIkey}&units=metric`;
+    axios.get(ApiUrl).then(WeatherResponse);
+  }
   if (weatherInfo.ready) {
     return (
       <div className="App">
         <div className="container">
           <div className="d-flex">
             <div className="p-2 flex-grow-1">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="d-flex">
                   <div className="p-2 flex-grow-1">
                     <input
@@ -34,6 +50,7 @@ function App() {
                       placeholder="Enter a city.."
                       className="form-control"
                       autoFocus="on"
+                      onChange={UpdateCity}
                     />
                   </div>
                   <div className="p-2">
@@ -52,120 +69,7 @@ function App() {
               </button>
             </div>
           </div>
-          <div className="d-flex">
-            <div className="p-2 flex-grow-1">
-              <h1 className="CityName">{weatherInfo.city}</h1>
-              <div className="DateInfo"><DateFormater date={weatherInfo.dataCurrent} /></div>
-              <div className="DescriptionInfo">{weatherInfo.description}</div>
-              <div className="row">
-                <div className="col-5" id="MainIcon">
-                  <img
-                    src={weatherInfo.iconUrl}
-                    alt={weatherInfo.description}
-                  />
-                </div>
-                <div className="col-5">
-                  <span className="TempValue">
-                    {Math.round(weatherInfo.temperature)}
-                  </span>
-                  <span className="metric"> °C</span>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col">
-                  <button className="btn btn-primary w-100">
-                    Detailed information
-                  </button>
-                </div>
-                <div className="col">
-                  <button className="btn btn-primary w-100">
-                    Hourly information
-                  </button>
-                </div>
-                <div className="DetailedInfo">
-                  <ul>
-                    <li>Feels like: {Math.round(weatherInfo.feelslike)}°C</li>
-                    <li>Humidity: {Math.round(weatherInfo.humadity)}%</li>
-                    <li>Wind: {Math.round(weatherInfo.wind)}km/h</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="p-3">
-              <ul className="DayForecast">
-                <li>
-                  <div className="NameDayForecast">Sat</div>
-                  <div className="row">
-                    <div className="col">
-                      <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" />
-                    </div>
-                    <div className="col">
-                      <div className="row">
-                        <div className="col">7°</div>
-                        <div className="col">0°</div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="NameDayForecast">Sat</div>
-                  <div className="row">
-                    <div className="col">
-                      <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" />
-                    </div>
-                    <div className="col">
-                      <div className="row">
-                        <div className="col">7°</div>
-                        <div className="col">0°</div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="NameDayForecast">Sat</div>
-                  <div className="row">
-                    <div className="col">
-                      <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" />
-                    </div>
-                    <div className="col">
-                      <div className="row">
-                        <div className="col">7°</div>
-                        <div className="col">0°</div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="NameDayForecast">Sat</div>
-                  <div className="row">
-                    <div className="col">
-                      <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" />
-                    </div>
-                    <div className="col">
-                      <div className="row">
-                        <div className="col">7°</div>
-                        <div className="col">0°</div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="NameDayForecast">Sat</div>
-                  <div className="row">
-                    <div className="col">
-                      <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" />
-                    </div>
-                    <div className="col">
-                      <div className="row">
-                        <div className="col">7°</div>
-                        <div className="col">0°</div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <Searching date={weatherInfo} />
         </div>
         <footer>
           This project was coded by Kateryna Nykonenko and is{" "}
@@ -184,10 +88,7 @@ function App() {
       </div>
     );
   } else {
-    let city = "Paris";
-    const APIkey = "o25a94199tbb4037b02fa17a9ad37fed";
-    let ApiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${APIkey}&units=metric`;
-    axios.get(ApiUrl).then(WeatherResponse);
+    search();
     return <div>Loading...</div>;
   }
 }
