@@ -47,7 +47,10 @@ export default function Searching(props) {
             <div className="NameDayForecast">Sat</div>
             <div className="row">
               <div className="col">
-                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" />
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+                  alt="description"
+                />
               </div>
               <div className="col">
                 <div className="row">
@@ -61,7 +64,10 @@ export default function Searching(props) {
             <div className="NameDayForecast">Sat</div>
             <div className="row">
               <div className="col">
-                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" />
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+                  alt="description"
+                />
               </div>
               <div className="col">
                 <div className="row">
@@ -75,7 +81,10 @@ export default function Searching(props) {
             <div className="NameDayForecast">Sat</div>
             <div className="row">
               <div className="col">
-                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" />
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+                  alt="description"
+                />
               </div>
               <div className="col">
                 <div className="row">
@@ -89,7 +98,10 @@ export default function Searching(props) {
             <div className="NameDayForecast">Sat</div>
             <div className="row">
               <div className="col">
-                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" />
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+                  alt="description"
+                />
               </div>
               <div className="col">
                 <div className="row">
@@ -103,7 +115,10 @@ export default function Searching(props) {
             <div className="NameDayForecast">Sat</div>
             <div className="row">
               <div className="col">
-                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" />
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+                  alt="description"
+                />
               </div>
               <div className="col">
                 <div className="row">

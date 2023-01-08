@@ -81,7 +81,11 @@ function App(props) {
             open-sourced on GitHub
           </a>{" "}
           and{" "}
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://app.netlify.com/sites/boisterous-beijinho-95bd37/deploys/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             hosted on Netlify
           </a>
         </footer>
