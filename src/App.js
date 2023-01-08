@@ -6,7 +6,6 @@ import "bootstrap/dist/css/bootstrap.css";
 function App() {
   const [weatherInfo, setWeatherInfo] = useState({ ready: false });
   function WeatherResponse(respons) {
-    console.log(respons.data);
     setWeatherInfo({
       ready: true,
       dataCurrent: "Sunday 01:47",
@@ -177,11 +176,7 @@ function App() {
             open-sourced on GitHub
           </a>{" "}
           and{" "}
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="#" target="_blank" rel="noopener noreferrer">
             hosted on Netlify
           </a>
         </footer>
