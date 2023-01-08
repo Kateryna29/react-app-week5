@@ -64,7 +64,7 @@ function App(props) {
               </form>
             </div>
             <div className="p-3">
-              <button className="btn btn-primary w-100">
+              <button className="btn btn-primary w-100" id="CurrentLocation">
                 Current location
               </button>
             </div>

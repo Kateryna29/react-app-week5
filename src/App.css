@@ -14,8 +14,11 @@
   position: relative;
   top: 35px;
 }
-.metric {
-  font-size: 28px;
+.unit {
+  font-size: 20px;
+}
+.DetailedInfo {
+  font-size: 22px;
 }
 .DayForecast li .row {
   font-size: 14px;
@@ -49,4 +52,9 @@ footer {
   font-size: 12px;
   text-align: center;
   margin-top: 5px;
+}
+#HourlyInformation,
+.DayForecast,
+#CurrentLocation {
+  display: none;
 }

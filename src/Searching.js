@@ -1,4 +1,5 @@
 import React from "react";
+import WeatherTempChange from "./WeatherTempChange";
 import DateFormater from "./DateFormater";
 
 export default function Searching(props) {
@@ -15,10 +16,7 @@ export default function Searching(props) {
             <img src={props.date.iconUrl} alt={props.date.description} />
           </div>
           <div className="col-5">
-            <span className="TempValue">
-              {Math.round(props.date.temperature)}
-            </span>
-            <span className="metric"> °C</span>
+            <WeatherTempChange celsius={Math.round(props.date.temperature)} />
           </div>
         </div>
         <div className="row">
@@ -28,7 +26,7 @@ export default function Searching(props) {
             </button>
           </div>
           <div className="col">
-            <button className="btn btn-primary w-100">
+            <button className="btn btn-primary w-100" id="HourlyInformation">
               Hourly information
             </button>
           </div>
