@@ -170,7 +170,7 @@ function App() {
         <footer>
           This project was coded by Kateryna Nykonenko and is{" "}
           <a
-            href="https://github.com/wecodeschool/react-weather-app"
+            href="https://github.com/Kateryna29/react-app-week5"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -178,7 +178,7 @@ function App() {
           </a>{" "}
           and{" "}
           <a
-            href="https://suspicious-beaver-111c4d.netlify.com/"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
           >
