@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import DateFormatForecast from "./DateFormatForecast";
 
@@ -9,6 +9,10 @@ export default function ForecastDay(props) {
     setForecast(respons.data.daily);
     setLoaded(true);
   }
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.date.city]);
 
   if (loaded) {
     return (
