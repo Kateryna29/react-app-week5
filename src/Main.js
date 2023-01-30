@@ -72,7 +72,7 @@ export default class Main extends Component {
                 />
               </div>
             </div>{" "}
-            <div className="d-flex">
+            <div className="d-flex align-content-sm-center">
               <div className="p-2 flex-grow-1">
                 <div className="mainInfo">
                   <h1 className="CityName">
@@ -87,6 +87,7 @@ export default class Main extends Component {
                   <div className="row">
                     <div className="col-5" id="MainIcon">
                       <img
+                        className="MainIcon"
                         src={this.state.weather.iconUrl}
                         alt={this.state.weather.description}
                         title={this.state.weather.description}
@@ -96,8 +97,8 @@ export default class Main extends Component {
                       <div className="WeatherTempChange">
                         <span className="TempValue">
                           {Math.round(this.state.weather.temperature)}
+                          <span className="unit">°C </span>
                         </span>
-                        <span className="unit">°C </span>
                       </div>
                     </div>
                   </div>

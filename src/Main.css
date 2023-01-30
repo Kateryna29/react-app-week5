@@ -40,9 +40,9 @@
 }
 .DF {
   width: 150px;
-  color: aliceblue;
+  color: var(--main-text-color);
   padding-left: 10px;
-  background-color: rgb(11, 94, 215);
+  background-color: var(--main-color);
   border-radius: 8px;
 }
 .NameDayForecast {
@@ -89,6 +89,7 @@ footer {
   font-size: 12px;
   text-align: center;
   margin-top: 5px;
+  color: var(--main-text-color);
 }
 
 .HF {
@@ -98,6 +99,63 @@ footer {
 .cartoon {
   width: 400px;
   margin-top: 10px;
-
   border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .App {
+    width: 380px;
+    margin: 10px auto;
+    height: auto;
+  }
+
+  .cartoon {
+    display: none;
+  }
+
+  #MainIcon img {
+    width: 120px;
+  }
+  .TempValue {
+    position: relative;
+    left: 10px;
+    top: -5px;
+  }
+  .unit {
+    position: relative;
+    top: -25px;
+  }
+  .DayForecast {
+    position: relative;
+    top: -25px;
+    left: -55px;
+  }
+  .p-5 {
+    padding: 0 auto;
+  }
+
+  .DayForecast li .row {
+    font-size: 12px;
+  }
+  .DF {
+    width: 100px;
+    padding-left: 5px;
+    margin-top: 10px;
+  }
+  .NameDayForecast {
+    margin: 3px;
+    font-size: 14px;
+    text-align: center;
+  }
+  .DayForecast li .row .col img {
+    width: 50px;
+    text-align: center;
+  }
+  #maxTemp {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .Information .row .col button {
+    margin-top: 10px;
+  }
 }

@@ -4,9 +4,8 @@ body {
     Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif,
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   line-height: 1.5;
-  color: #212529;
   background-image: url("./body_image.gif");
-  background-color: #cccccc;
+  background-color: #212529;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
