@@ -30,7 +30,10 @@ li {
   list-style: none;
 }
 
-.DetailedInfo ul {
+.Information {
+  margin-top: 125px;
+}
+.Information ul {
   margin-top: 25px;
 }
 .DescriptionInfo {
@@ -53,4 +56,3 @@ footer {
   text-align: center;
   margin-top: 5px;
 }
-

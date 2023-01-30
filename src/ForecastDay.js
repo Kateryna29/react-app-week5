@@ -5,14 +5,15 @@ import DateFormatForecast from "./DateFormatForecast";
 export default function ForecastDay(props) {
   const [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(null);
+
   function ForecastrResponse(respons) {
     setForecast(respons.data.daily);
     setLoaded(true);
-  }
+      }
 
   useEffect(() => {
     setLoaded(false);
-  }, [props.date.city]);
+  }, [props.city]);
 
   if (loaded) {
     return (
@@ -32,7 +33,7 @@ export default function ForecastDay(props) {
     );
   } else {
     const APIkey = "bd79ao40tde3dec118ca46bc3e6dd55f";
-    let ApiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${props.date.city}&key=${APIkey}&units=metric`;
+    let ApiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${APIkey}&units=metric`;
     axios.get(ApiUrl).then(ForecastrResponse);
     return null;
   }
