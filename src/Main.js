@@ -72,7 +72,7 @@ export default class Main extends Component {
                 />
               </div>
             </div>{" "}
-            <div className="d-flex align-content-sm-center">
+            <div className="d-flex">
               <div className="p-2 flex-grow-1">
                 <div className="mainInfo">
                   <h1 className="CityName">

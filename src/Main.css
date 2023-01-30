@@ -158,4 +158,7 @@ footer {
   .Information .row .col button {
     margin-top: 10px;
   }
+  .CityName {
+    font-size: 28px;
+  }
 }

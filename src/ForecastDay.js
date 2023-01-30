@@ -9,7 +9,7 @@ export default function ForecastDay(props) {
   function ForecastrResponse(respons) {
     setForecast(respons.data.daily);
     setLoaded(true);
-      }
+  }
 
   useEffect(() => {
     setLoaded(false);
