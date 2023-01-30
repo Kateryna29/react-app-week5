@@ -89,6 +89,7 @@ export default class Main extends Component {
                       <img
                         src={this.state.weather.iconUrl}
                         alt={this.state.weather.description}
+                        title={this.state.weather.description}
                       />
                     </div>
                     <div className="col-5">

@@ -14,6 +14,7 @@ export default class CurrentLocation extends Component {
     return (
       <button
         className="float-left btn btn-outline-primary"
+        title="Current location"
         onClick={(event) => this._click(event)}
       >
         🏠

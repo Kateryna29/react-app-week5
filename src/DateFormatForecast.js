@@ -24,6 +24,7 @@ export default function DateFormatForecast(props) {
           <img
             src={props.dateForecast.condition.icon_url}
             alt={props.dateForecast.condition.description}
+            title={props.dateForecast.condition.description}
           />
         </div>
         <div className="col">

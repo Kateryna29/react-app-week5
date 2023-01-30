@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import snowman from "./snowman.gif";
+
 import HourlyFormatForecast from "./HourlyFormatForecast";
 
 export default function DetailedInfo(props) {
@@ -42,7 +44,7 @@ export default function DetailedInfo(props) {
         <div className="row">
           <div className="col">
             <button
-              className="btn btn-primary w-100"
+              className="btn btn-outline-primary w-100"
               onClick={showDetailedInfo}
             >
               Detailed information
@@ -50,13 +52,16 @@ export default function DetailedInfo(props) {
           </div>
           <div className="col">
             <button
-              className="btn btn-primary w-100"
+              className="btn btn-outline-primary w-100"
               id="HourlyInformation"
               onClick={showHourlyInfo}
             >
               Hourly information
             </button>
           </div>
+        </div>
+        <div class="text-center">
+          <img src={snowman} alt="GIF" className="cartoon" />
         </div>
       </div>
     );
@@ -72,7 +77,7 @@ export default function DetailedInfo(props) {
             </div>
             <div className="col">
               <button
-                className="btn btn-primary w-100"
+                className="btn btn-outline-primary w-100  btn-sm"
                 id="HourlyInformation"
                 onClick={showHourlyInfo}
               >
@@ -97,7 +102,7 @@ export default function DetailedInfo(props) {
             <div className="row">
               <div className="col">
                 <button
-                  className="btn btn-primary w-100"
+                  className="btn btn-outline-primary w-100  btn-sm"
                   onClick={showDetailedInfo}
                 >
                   Detailed information
