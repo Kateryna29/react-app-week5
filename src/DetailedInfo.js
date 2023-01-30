@@ -60,7 +60,7 @@ export default function DetailedInfo(props) {
             </button>
           </div>
         </div>
-        <div class="text-center">
+        <div className="text-center">
           <img src={snowman} alt="GIF" className="cartoon" />
         </div>
       </div>

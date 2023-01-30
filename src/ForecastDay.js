@@ -4,16 +4,16 @@ import DateFormatForecast from "./DateFormatForecast";
 
 export default function ForecastDay(props) {
   const [loaded, setLoaded] = useState(false);
-  let [forecast, setForecast] = useState(null);
+  const [forecast, setForecast] = useState(null);
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.city]);
 
   function ForecastrResponse(respons) {
     setForecast(respons.data.daily);
     setLoaded(true);
   }
-
-  useEffect(() => {
-    setLoaded(false);
-  }, [props.city]);
 
   if (loaded) {
     return (

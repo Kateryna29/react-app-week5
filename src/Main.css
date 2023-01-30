@@ -27,6 +27,8 @@
 }
 .unit {
   font-size: 20px;
+  position: relative;
+  top: -25px;
 }
 .DetailedInfo {
   font-size: 22px;
@@ -120,10 +122,6 @@ footer {
     position: relative;
     left: 10px;
     top: -5px;
-  }
-  .unit {
-    position: relative;
-    top: -25px;
   }
   .DayForecast {
     position: relative;
