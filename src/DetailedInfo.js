@@ -4,7 +4,7 @@ import axios from "axios";
 import HourlyFormatForecast from "./HourlyFormatForecast";
 
 export default function DetailedInfo(props) {
-  const [buttonActive, setButtonActive] = useState("DetailedInfo");
+  const [buttonActive, setButtonActive] = useState("");
   const [weatherInfo, setWeatherInfo] = useState("");
   const [loaded, setLoaded] = useState(false);
   let lat = props.weather.latitude;
@@ -36,13 +36,15 @@ export default function DetailedInfo(props) {
     setButtonActive("HourlyInfo");
     countHourlyInfo(lat, lon);
   }
-
-  if (buttonActive === "DetailedInfo") {
+  if (buttonActive === "") {
     return (
       <div className="Information">
         <div className="row">
           <div className="col">
-            <button className="btn btn-primary w-100">
+            <button
+              className="btn btn-primary w-100"
+              onClick={showDetailedInfo}
+            >
               Detailed information
             </button>
           </div>
@@ -55,55 +57,81 @@ export default function DetailedInfo(props) {
               Hourly information
             </button>
           </div>
-          <ul>
-            <li>
-              Feels like: {Math.round(props.weather.feelslike)}
-              °C
-            </li>
-            <li>Humidity: {Math.round(props.weather.humadity)}%</li>
-            <li>Wind: {Math.round(props.weather.wind)}km/h</li>
-          </ul>
         </div>
       </div>
     );
   } else {
-    if (loaded) {
+    if (buttonActive === "DetailedInfo") {
       return (
         <div className="Information">
           <div className="row">
             <div className="col">
-              <button
-                className="btn btn-primary w-100"
-                onClick={showDetailedInfo}
-              >
+              <button className="btn btn-primary w-100">
                 Detailed information
               </button>
             </div>
             <div className="col">
-              <button className="btn btn-primary w-100" id="HourlyInformation">
+              <button
+                className="btn btn-primary w-100"
+                id="HourlyInformation"
+                onClick={showHourlyInfo}
+              >
                 Hourly information
               </button>
             </div>
-            <ul size={10}>
-              {weatherInfo.map(function (hourlyforecast, index) {
-                if (index < 12) {
-                  return (
-                    <li key={index} className="hours">
-                      <HourlyFormatForecast
-                        dateHourlyForecast={hourlyforecast}
-                      />
-                    </li>
-                  );
-                } else {
-                  return null;
-                }
-              })}
+            <ul>
+              <li>
+                Feels like: {Math.round(props.weather.feelslike)}
+                °C
+              </li>
+              <li>Humidity: {Math.round(props.weather.humadity)}%</li>
+              <li>Wind: {Math.round(props.weather.wind)}km/h</li>
             </ul>
           </div>
         </div>
       );
     } else {
-      return null;
+      if (loaded) {
+        return (
+          <div className="Information">
+            <div className="row">
+              <div className="col">
+                <button
+                  className="btn btn-primary w-100"
+                  onClick={showDetailedInfo}
+                >
+                  Detailed information
+                </button>
+              </div>
+              <div className="col">
+                <button
+                  className="btn btn-primary w-100"
+                  id="HourlyInformation"
+                >
+                  Hourly information
+                </button>
+              </div>
+              <ul size={10}>
+                {weatherInfo.map(function (hourlyforecast, index) {
+                  if (index < 12) {
+                    return (
+                      <li key={index} className="hours">
+                        <HourlyFormatForecast
+                          dateHourlyForecast={hourlyforecast}
+                        />
+                      </li>
+                    );
+                  } else {
+                    return null;
+                  }
+                })}
+              </ul>
+            </div>
+          </div>
+        );
+      } else {
+        return null;
+      }
     }
   }
 }

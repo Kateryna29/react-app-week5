@@ -63,7 +63,7 @@ export default class Main extends Component {
       return (
         <div className="App">
           <div className="container">
-            <div className="d-flex">
+            <div className="d-inline-flex p-1">
               <Searching refresh={this.refresh} />
 
               <div className="p-3">
@@ -107,7 +107,7 @@ export default class Main extends Component {
                   />
                 </div>
               </div>
-              <div className="p-3">
+              <div className="p-5">
                 <ForecastDay city={this.state.city} />
               </div>
             </div>

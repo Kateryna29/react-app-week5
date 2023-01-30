@@ -35,8 +35,8 @@ export default class Searching extends Component {
             <div className="p-2">
               <input
                 type="submit"
-                value="Search"
-                className="btn btn-primary w-100"
+                value="🔎"
+                className="btn btn-outline-primary w-100"
               />
             </div>
           </div>

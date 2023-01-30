@@ -10,6 +10,7 @@
     "axios": "^1.2.2",
     "bootstrap": "^5.2.3",
     "component": "^1.1.0",
+    "font-awesome": "^4.7.0",
     "geolocation": "^0.2.0",
     "prop-types": "^15.8.1",
     "proptypes": "^1.1.0",

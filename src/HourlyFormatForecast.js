@@ -11,7 +11,7 @@ export default function HourlyFormatForecast(props) {
     return hours;
   }
   return (
-    <div>
+    <div className="HF">
       <div className="row">
         <div className="col">{hour()}</div>
         <div className="col">
