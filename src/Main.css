@@ -159,7 +159,7 @@ footer {
   .CityName {
     font-size: 28px;
   }
-  .HF {
+  .HF .row .col {
     font-size: 12px;
   }
 }
