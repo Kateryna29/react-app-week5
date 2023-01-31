@@ -116,17 +116,17 @@ footer {
   }
 
   #MainIcon img {
-    width: 120px;
+    width: 100px;
   }
   .TempValue {
     position: relative;
-    left: 10px;
+    left: 30px;
     top: -5px;
   }
   .DayForecast {
     position: relative;
     top: -25px;
-    left: -65px;
+    left: -10px;
   }
   .p-5 {
     padding: 0 auto;
